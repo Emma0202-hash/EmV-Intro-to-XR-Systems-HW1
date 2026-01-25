@@ -12,10 +12,10 @@ public class ViewTeleport : MonoBehaviour
     void Start()
     {
         toggleAction.action.Enable(); //Enable VR button
-        toggleAction.action.performed += (ctx) => TogglePosition();// Listen for button pressed      
+        toggleAction.action.performed += OnTogglePerformed;// Listen for button pressed      
     }
 
-    void TogglePosition()
+    private void OnTogglePerformed(InputAction.CallbackContext ctx)
     {
         if (isOutside)
         {
